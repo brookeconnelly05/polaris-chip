@@ -26,14 +26,29 @@
 <body>
   <h1>polaris-chip</h1>
   <!-- this is going to do whatever the tag's defaults are -->
-  <polaris-chip title="News of Record" link="https://hax.psu.edu/"></polaris-chip>
+  <polaris-chip title="News of Record" link="https://hax.psu.edu/">
+    
+  </polaris-chip>
   <polaris-chip title="Faculty and Staff"></polaris-chip>
   <polaris-chip title="Sports are the only thing that matter"></polaris-chip>
   <polaris-chip title="Grants and donations"></polaris-chip>
 
   <h1>my-card</h1>
+  <button class="toggleButton">toggle</button>
+  <script>
+    const button =document.querySelector('button');
+    button.addEventListener('click', () => {
+      const card = document.querySelector('my-card');
+      card.fancy = !card.fancy;
+
+
+    });
+
+  </script>
   <my-card></my-card>
-  <my-card image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjgg7Hxv5FXdaSh123tC3dMo0C6sO2R_EWSg&s"></my-card>
+  <my-card 
+  image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjgg7Hxv5FXdaSh123tC3dMo0C6sO2R_EWSg&s">
+</my-card>
   <my-card title ="Be Happy!"></my-card>
   <my-card affirmationsLink="https://www.crisistextline.org/blog/2024/01/08/100-positive-affirmations-for-better-self-care/"></my-card>
   <my-card description="Smile for best results"></my-card>
@@ -41,6 +56,7 @@
   <!-- this is what is bringing in the definition for this tag -->
   <script type="module" src="./src/polaris-chip.js"></script>
   <script type="module" src="./src/my-card.js"></script>
+  
 </body>
 
 </html>
