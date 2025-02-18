@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit';
-
+import "@haxtheweb/meme-maker/meme-maker.js";
 /**
  * Now it's your turn. Here's what we need to try and do:
  * 1. Get you HTML from your card working in here 
@@ -26,12 +26,14 @@ export class MyCard extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: block;
+        display: inline-block;
       }
       
       :host([fancy]) .bkg {
+        display: inline-block;
         background-color: pink;
         color: green;
+        
 
 }
 
@@ -69,6 +71,8 @@ export class MyCard extends LitElement {
         
       }
 
+      
+
       button{
         margin: 15px 10px 20px 140px;
         font-size:15px;
@@ -102,7 +106,14 @@ export class MyCard extends LitElement {
   
     <div class="bkg">
         <h1>${this.title}</h1>
-        <img src="${this.image}" alt="Image">
+        <!-- <img src="${this.image}" alt="Image"> -->
+        
+        <meme-maker
+          alt="Up your meme game with hax and allow for more accessible memes"
+          image-url="https://haxtheweb.org/files/giphy.gif"
+          bottom-text="HTML is anything"
+          top-text="HAX is html">
+          </meme-maker>
         <p>${this.description}</p>
         <slot></slot>
         <!-- put this in your render method where you had details -->
@@ -122,6 +133,7 @@ export class MyCard extends LitElement {
         
         
         </a>
+        
       </div>
     
     
